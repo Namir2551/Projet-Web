@@ -4,6 +4,7 @@ import "./pageStagesEmployeurs.css";
 function StagesEmployeurs() {
     return (
         <div>
+            <h1>FAIRE LE CSS</h1>
             Formulaire d'inscription de milieu de stage
         Stages réguliers ayant lieu à la session hiver 
 		Les stages sont du 21 janvier au 3 mai 2019 

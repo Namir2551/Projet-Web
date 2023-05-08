@@ -9,10 +9,14 @@ import {
 import MainNavigation from "./shared/Navigation/MainNavigation";
 import PageAccueil from "./acceuil/pages/pageAccueil";
 import PageStagesEmployeurs from "./stagesEmployeurs/pages/pageStagesEmployeurs";
-import Professeurs from './professeur/pages/Professeurs';
-import LesCours from "./cours/lesCours/pages/LesCours";
+import PageStagesEtudiant from "./stagesEtudiants/pages/PageStagesEtudiants";
+import ProfilsStagiaires from './profilsStagiaires/pages/PageProfilsStagiaires';
 import Footer from './shared/Footer';
-import Faq from './FAQ/PageFAQ';
+import Faq from './FAQ/pages/PageFAQ';
+import AjouterStage from './stage/pages/ajouterStage';
+import ListeStage from './stage/pages/listeStage';
+import AjouterEtudiant from './etudiant/pages/ajouterEtudiant';
+import ListeEtudiant from './etudiant/pages/listeEtudiant';
 
 function App() {
   return (
@@ -23,19 +27,30 @@ function App() {
           <Route path="/" exact>
             <PageAccueil />
           </Route>
-          <Route path="/cours" exact>
+          <Route path="/stagesEmployeurs" exact>
             <PageStagesEmployeurs />
           </Route>
-          <Route path="/cours/:coursId" exact>
-            <LesCours />
+          <Route path="/profilsStagiaires" exact>
+            <ProfilsStagiaires />
           </Route>
-          <Route path="/professeurs" exact>
-            <Professeurs />
+          <Route path="/stagesEtudiant" exact>
+            <PageStagesEtudiant />
           </Route>
-          <Route path="/Faq" exact>
+          <Route path="/FAQ" exact>
             <Faq />
           </Route>
-
+          <Route path="/ajoutStage" exact>
+            <AjouterStage />
+          </Route>
+          <Route path="/listeStage" exact>
+            <ListeStage />
+          </Route>
+          <Route path="/ajoutEtudiant" exact>
+            <AjouterEtudiant />
+          </Route>
+          <Route path="/listeEtudiant" exact>
+            <ListeEtudiant />
+          </Route>
           <Redirect to="/" />
         </Switch>
         <Footer />

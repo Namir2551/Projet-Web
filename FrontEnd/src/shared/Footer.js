@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = props => {
   return (
     <footer>
-        <p>&copy; Copyright - Namir Kas Nasrallah - Guillaume Giguère - Ali Tebbal</p>
+        <p>Sylvain Labranche - sylvain.labranche@cmontmorency.qc.ca - 2023-05-11</p>
     </footer>
   );
 };
