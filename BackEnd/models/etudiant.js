@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const etudiantSchema = new Schema({
     
-    nom: {type: String, required: true},
-    prenom: {type: String, required: true},
-    numAd: {type: String, required: true}
-    
+    numDA: {type: String, required: true},
+    nomEtudiant: {type: String, required: true},
+    courrielEtudiant: {type: String, required: true},
+    profilSortieEtudiant: {type: String, required: true}
 });
 
 module.exports = mongoose.model("Etudiant", etudiantSchema);
