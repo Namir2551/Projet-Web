@@ -3,14 +3,10 @@ const express = require("express");
 const controleursEtudiant = require("../controllers/etudiants-controleurs")
 const router = express.Router();
 
-router.get("/:etudiantId",controleursEtudiant.getEtudiant);
+router.get("/listeEtudiant",controleursEtudiant.getEtudiant);
 
-router.post('/ajoueEtu',controleursEtudiant.ajouterEtudiant);
+router.post('/ajouterEtudiant',controleursEtudiant.ajouterEtudiant);
 
-router.post('/:etudiantId/:coursId',controleursEtudiant.ajoueEtuCours)
-
-router.patch("/:etudiantId",controleursEtudiant.modifierEtu);
-
-router.delete("/:etudiantId",controleursEtudiant.supprimerEtudiant);
+//router.post('/ajouterEtudiantStage',controleursEtudiant.ajouterEtudiantStage);
 
 module.exports = router;

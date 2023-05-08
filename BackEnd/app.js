@@ -3,8 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', true);
 
-const coursRoutes = require("./routes/cours-routes");
-const profsRoutes = require("./routes/profs-routes");
+const stagesRoutes = require("./routes/stages-routes");
 const etudiantsRoutes = require("./routes/etudiants-routes");
 const HttpErreur = require("./models/http-erreur");
 
@@ -19,8 +18,7 @@ app.use((requete, reponse, next) =>{
   next();
 })
 
-app.use("/api/cours", coursRoutes);
-app.use("/api/profs", profsRoutes);
+app.use("/api/stages", stagesRoutes);
 app.use("/api/etudiants", etudiantsRoutes);
 
 app.use((requete, reponse, next) => {
