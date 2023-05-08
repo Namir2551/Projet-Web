@@ -7,6 +7,10 @@ img {
 
 p {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     display: block;
+}
+
+h1 {
+  text-align: center;
 }
