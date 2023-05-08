@@ -12,6 +12,7 @@ import PageStagesEmployeurs from "./stagesEmployeurs/pages/pageStagesEmployeurs"
 import Professeurs from './professeur/pages/Professeurs';
 import LesCours from "./cours/lesCours/pages/LesCours";
 import Footer from './shared/Footer';
+import Faq from './FAQ/PageFAQ';
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
           <Route path="/professeurs" exact>
             <Professeurs />
           </Route>
+          <Route path="/Faq" exact>
+            <Faq />
+          </Route>
+
           <Redirect to="/" />
         </Switch>
         <Footer />
