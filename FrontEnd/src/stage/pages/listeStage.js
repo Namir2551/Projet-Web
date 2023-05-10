@@ -3,8 +3,8 @@ import "./listeStage.css";
 
 function ListeStage() {
     return (
-        <div>
-            <h1>Affiche tout les stages (SO ALI FAIT LE)</h1>
+        <div> 
+           <h1>En progression....</h1>
         </div>
     );
   }
