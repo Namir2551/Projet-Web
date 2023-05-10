@@ -1,16 +1,16 @@
-div {
+.divi {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: #333;
   }
   
-h3 {
+.titre {
     font-weight: bold;
     margin-top: 30px;
   }
   
-li {
+.liste {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 10px 0;

@@ -3,8 +3,8 @@ import "./PageStagesEtudiant.css";
 
 function StagesEtudiants() {
     return (
-        <div>           
-		      <h3>Édition  - Directives pour les étudiants</h3>
+        <div className="divi">           
+		      <h3 className="titre">Édition  - Directives pour les étudiants</h3>
 			  Tâches à effectuer par l'étudiant à la session d'automne  (c'est-à-dire maintenant):
 			  
 				Au plus tard le mardi 18 septembre à 12h00: Produire un CV que vous devez remettre au coordonnateur des stages (Sylvain Labranche). 
@@ -47,16 +47,16 @@ function StagesEtudiants() {
 			    <a href="../documents/Code_ethique_presentation_stages.pdf"> l'éthique et les dates (pour Hiver 2019)</a>
 	
 			  <p>Plus de détails pour les 
-			      <a href="rapports_techniques.php">rapports techniques</a></p> 			      
-				<h3>TRÈS IMPORTANT: pour toute communication par courriel avec le coordonnateur
+			      <a href="rapports_techniques.php"> rapports techniques</a></p> 			      
+				<h3 className="titre">TRÈS IMPORTANT: pour toute communication par courriel avec le coordonnateur
 					vous devez inscrire dans le sujet du message:</h3>
-					<li class="retrait petit">SUJET: Stages profil #DA nom - raison</li>
-					<li class="retrait petit">profil est soit réseaux, soit prog</li>
-					<li class="retrait petit">#DA est votre numéro d'admission</li>
-					<li class="retrait petit">nom est votre nom</li>
-					<li class="retrait petit">par exemple: Stages réseaux 201014109 Joe Larue - contenu CV</li>  
-					<li>N'oubliez pas d'inscrire la raison du message (après le tiret).</li>
-					<li>Si ces conditions ne sont pas respectées, j'ignorerai le courriel et je ne répondrai pas.</li>
+					<li className="liste">SUJET: Stages profil #DA nom - raison</li>
+					<li className="liste">profil est soit réseaux, soit prog</li>
+					<li className="liste">#DA est votre numéro d'admission</li>
+					<li className="liste">nom est votre nom</li>
+					<li className="liste">par exemple: Stages réseaux 201014109 Joe Larue - contenu CV</li>  
+					<li className="liste">N'oubliez pas d'inscrire la raison du message (après le tiret).</li>
+					<li className="liste">Si ces conditions ne sont pas respectées, j'ignorerai le courriel et je ne répondrai pas.</li>
 	
               <br></br>
 			  Déroulement des stages / Horaire de travail
