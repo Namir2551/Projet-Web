@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./listeEtudiant.css";
+import ListeEtudiant from "../components/ListeEtudiant";
 
-function ListeEtudiant() {
+const ListeEtudiantPage = () => {
+    const [loadedEtudiants, setLoadedEtudiants] = useState([
+        {
+            id: "1",
+            numDA: "123",
+            nomEtudiant: "Guillaume",
+            courrielEtudiant: "Gui@hotmail.com",
+            profilSortieEtudiant: "D",
+          },
+    ]);
+
     return (
-        <div>
-            <h1>Affiche tout les étudiant (SO ALI FAIT LE)</h1>
-        </div>
+        <React.Fragment>
+            <ListeEtudiant items={loadedEtudiants} />
+        </React.Fragment>
     );
   }
-  
-  export default ListeEtudiant;
+export default ListeEtudiantPage;
