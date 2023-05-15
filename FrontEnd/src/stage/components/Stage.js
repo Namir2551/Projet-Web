@@ -1,33 +1,28 @@
-import React from "react";
+import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 
 import Card from "../../shared/Card";
 import "./Stage.css";
 
-function Cours({ id, nomContact, courrielContact,  numContact,nomEntreprise,
-          adresseEntreprise, typeStage,nbPosteDispo, description,renumeration}) {
+const Cours = props => {
   return (
-    <li className="card-cours">
-      <p>Hi</p>
-        <Card className="card-cours__content">
-          <Link to={"/stage/" + id}>
-          <div className="card-cours__info">
-              <h2>{titre}</h2>
-              <h2>{nomContact}</h2>
-              <h2>{courrielContact}</h2>
-              <h2>{numContact}</h2>
-              <h2>{nomEntreprise}</h2>
-              <h2>{adresseEntreprise}</h2>
-              <h2>{typeStage}</h2>
-              <h2>{nbPosteDispo}</h2>
-              <h2>{description}</h2>
-              <h2>{renumeration}</h2>
-              
+    <React.Fragment>
+      <li className="card-etudiant">
+        <Card className="card-etudiant__content">
+            <div className="card-prof__info">
+                <h2>{props.nomContact}</h2>
+                <h3>{props.courrielContact}</h3>
+                <p>{props.numContact}</p>
+                <p>{props.nomEntreprise}</p>
+                <p>{props.adresseEntreprise}</p>
+                <p>{props.typeStage}</p>
+                <p>{props.nbPosteDispo}</p>
+                <p>{props.description}</p>
+                <p>{props.renumeration}</p>
             </div>
-          </Link>
         </Card>
-        
-    </li>
+      </li>
+    </React.Fragment>
    
   );
 }
