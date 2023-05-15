@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./listeStage.css";
 import ListeStages from "../components/ListeStages";
+import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const ListeStagePage = () => {
     const [loadedStage, setLoadedEtudiants] = useState([
         {
-            
             nomContact:"BAJOUR",
             courrielContact:"BAJOUR",
             numContact:"BAJOUR",
@@ -16,16 +16,30 @@ const ListeStagePage = () => {
             nbPosteDispo:"BAJOUR",
             description:"BAJOUR",
             renumeration:"BAJOUR",
-
           },
-
     ]);
 
-    return (
+    const {error, sendRequest, clearError } = useHttpClient();
+    const [loadedStages, setLoadedStages] = useState();
 
+    useEffect(() => {
+        const fetchStages = async () => {
+          try {
+            const responseData = await sendRequest(
+              `http://localhost:5000/api/stages/listeStage`
+            );
+            setLoadedStages(responseData.stage);
+          } catch (err) {
+
+          }
+        };
+        fetchStages();
+      }, [sendRequest]);
+
+    return (
         <React.Fragment>
             <h1>LISTE DES STAGES</h1>
-            <ListeStages items={loadedStage} />
+            {loadedStages && <ListeStages items={loadedStages} />}
         </React.Fragment>
     );
   }

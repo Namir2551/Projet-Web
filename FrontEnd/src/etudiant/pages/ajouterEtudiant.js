@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./ajouterEtudiant.css";
 
 const AjouterEtudiant = () => {
     const {error, sendRequest, clearError } = useHttpClient();
-    const [formState, inputHandler] = useState(
+    const [formState, inputHandler] = useForm(
         {
           numDA: {
             value: '',
@@ -27,6 +28,7 @@ const AjouterEtudiant = () => {
       );
 
       const etudiantSubmitHandler  = async event =>  {
+        console.log("test")
         event.preventDefault();
         console.log(formState.inputs);
     
@@ -88,7 +90,7 @@ const AjouterEtudiant = () => {
                 </div>
             </div>
             <div className='nouveau-etudiant__actions'>
-                <button type='submit'>Ajouter Étudiant</button>
+                <button type='submit' disabled={!formState.isValid}>Ajouter Étudiant</button>
             </div>
         </form>
         </div>

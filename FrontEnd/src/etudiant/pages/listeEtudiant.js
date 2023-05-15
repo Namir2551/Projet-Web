@@ -11,7 +11,7 @@ const ListeEtudiantPage = () => {
             numDA: "123",
             nomEtudiant: "Guillaume",
             courrielEtudiant: "Gui@hotmail.com",
-            profilSortieEtudiant: "D",
+            profilSortieEtudiant: "Sécurité",
           },
     ]);
     const {error, sendRequest, clearError } = useHttpClient();
@@ -33,6 +33,7 @@ const ListeEtudiantPage = () => {
 
     return (
         <React.Fragment>
+            <h1>LISTE DES ÉTUDIANT</h1>
             {loadedEtudiants && <ListeEtudiant items={loadedEtudiants} />}
         </React.Fragment>
     );
