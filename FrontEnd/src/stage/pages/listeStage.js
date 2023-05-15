@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./listeStage.css";
+import ListeStages from "../components/ListeStages";
 
-function ListeStage() {
+const ListeStagePage = () => {
+    const [loadedStage, setLoadedEtudiants] = useState([
+        {
+            
+            nomContact:"BAJOUR",
+            courrielContact:"BAJOUR",
+            numContact:"BAJOUR",
+            nomEntreprise:"BAJOUR",
+            adresseEntreprise:"BAJOUR",
+            typeStage:"BAJOUR",
+            nbPosteDispo:"BAJOUR",
+            description:"BAJOUR",
+            renumeration:"BAJOUR",
+
+          },
+
+    ]);
+
     return (
-        <div> 
-           <h1>En progression....</h1>
-        </div>
+
+        <React.Fragment>
+            <h1>LISTE DES STAGES</h1>
+            <ListeStages items={loadedStage} />
+        </React.Fragment>
     );
   }
-  
-  export default ListeStage;
+export default ListeStagePage;

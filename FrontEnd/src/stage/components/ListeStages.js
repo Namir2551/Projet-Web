@@ -2,8 +2,8 @@ import React from "react";
 import "./ListeStages.css";
 import Card from "../../shared/Card";
 import Stage from "../components/Stage"
-function ListeStage(props) {
-    if (props.stage.length === 0) {
+const ListeStage = props => {
+    if (props.items.length === 0) {
       return (
         <div className="center">
           <Card>
@@ -15,18 +15,18 @@ function ListeStage(props) {
   
     return (
       <ul className="list-cours">
-        {props.stage.map((stage) => (
+        {props.items.map(stage => (
           <Stage
-          id={stage.id}
-          nomContact={stage.nomContact}
-          courrielContact= {stage.courrielContact}
-          numContact={stage.numContact}
-          nomEntreprise={stage.nomEntreprise}
-          adresseEntreprise={stage.adresseEntreprise}
-          typeStage={stage.typeStage}
-          nbPosteDispo={stage.nbPosteDispo}
-          description={stage.description}
-          renumeration={stage.renumeration}
+            id={stage.id}
+            nomContact={stage.nomContact}
+            courrielContact= {stage.courrielContact}
+            numContact={stage.numContact}
+            nomEntreprise={stage.nomEntreprise}
+            adresseEntreprise={stage.adresseEntreprise}
+            typeStage={stage.typeStage}
+            nbPosteDispo={stage.nbPosteDispo}
+            description={stage.description}
+            renumeration={stage.renumeration}
           
           />
         ))}
