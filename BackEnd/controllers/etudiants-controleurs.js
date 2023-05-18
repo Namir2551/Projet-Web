@@ -2,7 +2,7 @@ const { response } = require("express");
 const {v4 : uuidv4} = require("uuid");
 const HttpErreur = require("../models/http-erreur");
 
-const Stage = require("../models/stage");
+const Stage = require("../models/stages");
 const Etudiant = require("../models/etudiant");
 
 // get 
