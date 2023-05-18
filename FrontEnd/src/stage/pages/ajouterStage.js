@@ -5,67 +5,69 @@ import "./ajouterStage.css";
 
 function AjouterStage() {
     const {error, sendRequest, clearError } = useHttpClient();
-    const [formState, inputHandler] = useForm(
-        {
-          nomContact: {
-            value: '',
-            isValid: false
-          },
-          courrielContact: {
-            value: '',
-            isValid: false
-          },
-          numContact: {
-            value: '',
-            isValid: false
-          },
-          nomEntreprise: {
-            value: '',
-            isValid: false
-          },
-          adresseEntreprise: {
-            value: '',
-            isValid: false
-          },
-          typeStage: {
-            value: '',
-            isValid: false
-          },
-          nbPosteDispo: {
-            value: '',
-            isValid: false
-          },
-          description: {
-            value: '',
-            isValid: false
-          },
-          renumeration: {
-            value: '',
-            isValid: false
-          }
-        },
-        false
-      );
+    const [saisieNomContact, setSaisieNomContact] = useState('');
+    const [saisieCourrielContact, setSaisieCourrielContact] = useState('');
+    const [saisieNumContact, setSaisieNumContact] = useState('');
+    const [saisieNomEntreprise, setSaisieNomEntreprise] = useState('');
+    const [saisieAdresseEntreprise, setSaisieAdresseEntreprise] = useState('');
+    const [saisieTypeStage, setSaisieTypeStage] = useState('');
+    const [saisieNbPosteDispo, setSaisieNbPosteDispo] = useState('');
+    const [saisieDescription, setSaisieDescription] = useState('');
+    const [saisieRenumeration, setSaisieRenumeration] = useState('');
+
+    const changementNomContactHandler = (event) => {
+      setSaisieNomContact(event.target.value);
+    };
+
+    const changementCourrielContactHandler = (event) => {
+      setSaisieCourrielContact(event.target.value);
+    };
+
+    const changementNumContactHandler = (event) => {
+      setSaisieNumContact(event.target.value);
+    };
+
+    const changementNomEntrepriseHandler = (event) => {
+      setSaisieNomEntreprise(event.target.value);
+    };
+
+    const changementAdresseEntrepriseHandler = (event) => {
+      setSaisieAdresseEntreprise(event.target.value);
+    };
+
+    const changementTypeStageHandler = (event) => {
+      setSaisieTypeStage(event.target.value);
+    };
+
+    const changementNbPosteDispoHandler = (event) => {
+      setSaisieNbPosteDispo(event.target.value);
+    };
+
+    const changementDescriptionHandler = (event) => {
+      setSaisieDescription(event.target.value);
+    };
+
+    const changementRenumerationHandler = (event) => {
+      setSaisieRenumeration(event.target.value);
+    };
 
       const stageSubmitHandler  = async event =>  {
-        console.log("test")
         event.preventDefault();
-        console.log(formState.inputs);
     
         try {
           const reponseData = await sendRequest(
             "http://localhost:5000/api/stages/ajouterStage",
             "POST",
             JSON.stringify({
-                nomContact: formState.inputs.nomContact.value,
-                courrielContact: formState.inputs.courrielContact.value,
-                numContact: formState.inputs.numContact.value,
-                nomEntreprise: formState.inputs.nomEntreprise.value,
-                adresseEntreprise: formState.inputs.adresseEntreprise.value,
-                typeStage: formState.inputs.typeStage.value,
-                nbPosteDispo: formState.inputs.nbPosteDispo.value,
-                description: formState.inputs.description.value,
-                renumeration: formState.inputs.renumeration.value,
+                nomContact: saisieNomContact,
+                courrielContact: saisieCourrielContact,
+                numContact: saisieNumContact,
+                nomEntreprise: saisieNomEntreprise,
+                adresseEntreprise: saisieAdresseEntreprise,
+                typeStage: saisieTypeStage,
+                nbPosteDispo: saisieNbPosteDispo,
+                description: saisieDescription,
+                renumeration: saisieRenumeration,
             }),
             {
               "Content-Type": "application/json",
@@ -86,7 +88,7 @@ function AjouterStage() {
                     <input
                         id="nomContact"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNomContactHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -94,7 +96,7 @@ function AjouterStage() {
                     <input
                         id="courrielContact"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementCourrielContactHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -102,7 +104,7 @@ function AjouterStage() {
                     <input
                         id="numContact"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNumContactHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -110,7 +112,7 @@ function AjouterStage() {
                     <input
                         id="nomEntreprise"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNomEntrepriseHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -118,7 +120,7 @@ function AjouterStage() {
                     <input
                         id="adresseEntreprise"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementAdresseEntrepriseHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -126,7 +128,7 @@ function AjouterStage() {
                     <input
                         id="typeStage"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementTypeStageHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -134,7 +136,7 @@ function AjouterStage() {
                     <input
                         id="nbPosteDispo"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNbPosteDispoHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -142,7 +144,7 @@ function AjouterStage() {
                     <input
                         id="description"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementDescriptionHandler}
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -150,12 +152,12 @@ function AjouterStage() {
                     <input
                         id="renumeration"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementRenumerationHandler}
                     />
                 </div>
             </div>
             <div className='nouveau-stage__actions'>
-                <button type='submit' disabled={!formState.isValid}>Ajouter Stage</button>
+                <button type='submit'>Ajouter Stage</button>
             </div>
         </form>
         </div>

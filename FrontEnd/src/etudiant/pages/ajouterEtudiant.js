@@ -1,55 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from "../../shared/hooks/http-hook";
 import "./ajouterEtudiant.css";
 
 const AjouterEtudiant = () => {
     const {error, sendRequest, clearError } = useHttpClient();
-    const [formState, inputHandler] = useForm(
-        {
-          numDA: {
-            value: '',
-            isValid: false
-          },
-          nomEtudiant: {
-            value: '',
-            isValid: false
-          },
-          courrielEtudiant: {
-            value: '',
-            isValid: false
-          },
-          profilSortieEtudiant: {
-            value: '',
-            isValid: false
-          }
-        },
-        false
-      );
+    const [saisieNumDA, setSaisieNumDA] = useState('');
+    const [saisieNom, setSaisieNom] = useState('');
+    const [saisieCourriel, setSaisieCourriel] = useState('');
+    const [saisieProfilSortie, setSaisieProfilSortie] = useState('');
 
-      const etudiantSubmitHandler  = async event =>  {
-        console.log("test")
+    const changementNomHandler = (event) => {
+        setSaisieNom(event.target.value);
+    };
+
+    const changementNumDAHandler = (event) => {
+        setSaisieNumDA(event.target.value);
+    };
+
+    const changementCourrielHandler = (event) => {
+        setSaisieCourriel(event.target.value);
+    };
+
+    const changementProfilSortieHandler = (event) => {
+        setSaisieProfilSortie(event.target.value);
+    };
+
+    const etudiantSubmitHandler  = async event =>  {
         event.preventDefault();
-    
+
         try {
-          const reponseData = await sendRequest(
+        const reponseData = await sendRequest(
             "http://localhost:5000/api/etudiants/ajouterEtudiant",
             "POST",
             JSON.stringify({
-              numDA: formState.inputs.numDA.value,
-              nomEtudiant: formState.inputs.nomEtudiant.value,
-              courrielEtudiant: formState.inputs.courrielEtudiant.value,
-              profilSortieEtudiant: formState.inputs.profilSortieEtudiant.value,
+            numDA: saisieNumDA,
+            nomEtudiant: saisieNom,
+            courrielEtudiant: saisieCourriel,
+            profilSortieEtudiant: saisieProfilSortie,
             }),
             {
-              "Content-Type": "application/json",
+            "Content-Type": "application/json",
             }
-          );
-          console.log(reponseData);
+        );
+        console.log(reponseData);
         } catch (err) {
-          console.log(err);
+        console.log(err);
         }
-      };
+    };
 
     return (
         <div className="nouveau-etudiant">
@@ -60,7 +57,7 @@ const AjouterEtudiant = () => {
                     <input
                         id="numDA"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNumDAHandler}
                     />
                 </div>
                 <div className='nouveau-etudiant__control'>
@@ -68,7 +65,7 @@ const AjouterEtudiant = () => {
                     <input
                         id="nomEtudiant"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementNomHandler}
                     />
                 </div>
                 <div className='nouveau-etudiant__control'>
@@ -76,7 +73,7 @@ const AjouterEtudiant = () => {
                     <input
                         id="courrielEtudiant"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementCourrielHandler}
                     />
                 </div>
                 <div className='nouveau-etudiant__control'>
@@ -84,12 +81,12 @@ const AjouterEtudiant = () => {
                     <input
                         id="profilSortieEtudiant"
                         type='text'
-                        onInput={inputHandler}
+                        onChange={changementProfilSortieHandler}
                     />
                 </div>
             </div>
             <div className='nouveau-etudiant__actions'>
-                <button type='submit' /*disabled={!formState.isValid}*/>Ajouter Étudiant</button>
+                <button type='submit'>Ajouter Étudiant</button>
             </div>
         </form>
         </div>
