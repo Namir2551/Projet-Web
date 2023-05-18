@@ -5,15 +5,7 @@ import ListeEtudiant from "../components/ListeEtudiant";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const ListeEtudiantPage = () => {
-    const [loadedEtudiant, setLoadedEtudiant] = useState([
-        {
-            id: "1",
-            numDA: "123",
-            nomEtudiant: "Guillaume",
-            courrielEtudiant: "Gui@hotmail.com",
-            profilSortieEtudiant: "Sécurité",
-          },
-    ]);
+
     const {error, sendRequest, clearError } = useHttpClient();
     const [loadedEtudiants, setLoadedEtudiants] = useState();
 
@@ -23,7 +15,7 @@ const ListeEtudiantPage = () => {
             const responseData = await sendRequest(
               `http://localhost:5000/api/etudiants/listeEtudiant`
             );
-            setLoadedEtudiants(responseData.etudiants);
+            setLoadedEtudiants(responseData.etudiant);
           } catch (err) {
 
           }

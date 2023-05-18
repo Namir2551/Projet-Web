@@ -14,4 +14,4 @@ const coursSchema = new Schema({
     renumeration:{type: String, required: true}
 });
 
-module.exports = mongoose.model("Cours", coursSchema);
+module.exports = mongoose.model("Stages", coursSchema);

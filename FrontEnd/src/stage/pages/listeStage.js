@@ -5,20 +5,6 @@ import ListeStages from "../components/ListeStages";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const ListeStagePage = () => {
-    const [loadedStage, setLoadedEtudiants] = useState([
-        {
-            nomContact:"BAJOUR",
-            courrielContact:"BAJOUR",
-            numContact:"BAJOUR",
-            nomEntreprise:"BAJOUR",
-            adresseEntreprise:"BAJOUR",
-            typeStage:"BAJOUR",
-            nbPosteDispo:"BAJOUR",
-            description:"BAJOUR",
-            renumeration:"BAJOUR",
-          },
-    ]);
-
     const {error, sendRequest, clearError } = useHttpClient();
     const [loadedStages, setLoadedStages] = useState();
 
