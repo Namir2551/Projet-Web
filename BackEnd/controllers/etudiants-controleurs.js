@@ -39,7 +39,7 @@ const ajouterEtudiant= async (requete, reponse, next) => {
             new HttpErreur("Etudiant existe déjà. Veuillez rééssayer", 422)
         );
     }
-    let nouveauEtudiant = new Etudiant({
+    const nouveauEtudiant = new Etudiant({
         numDA, 
         nomEtudiant, 
         courrielEtudiant, 

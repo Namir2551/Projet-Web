@@ -30,7 +30,6 @@ const AjouterEtudiant = () => {
       const etudiantSubmitHandler  = async event =>  {
         console.log("test")
         event.preventDefault();
-        console.log(formState.inputs);
     
         try {
           const reponseData = await sendRequest(
@@ -67,7 +66,7 @@ const AjouterEtudiant = () => {
                 <div className='nouveau-etudiant__control'>
                     <label>Nom</label>
                     <input
-                        id="nom"
+                        id="nomEtudiant"
                         type='text'
                         onInput={inputHandler}
                     />
@@ -75,7 +74,7 @@ const AjouterEtudiant = () => {
                 <div className='nouveau-etudiant__control'>
                     <label>Courriel</label>
                     <input
-                        id="courriel"
+                        id="courrielEtudiant"
                         type='text'
                         onInput={inputHandler}
                     />
@@ -83,14 +82,14 @@ const AjouterEtudiant = () => {
                 <div className='nouveau-etudiant__control'>
                     <label>Profil de sortie</label>
                     <input
-                        id="profilSortie"
+                        id="profilSortieEtudiant"
                         type='text'
                         onInput={inputHandler}
                     />
                 </div>
             </div>
             <div className='nouveau-etudiant__actions'>
-                <button type='submit' disabled={!formState.isValid}>Ajouter Étudiant</button>
+                <button type='submit' /*disabled={!formState.isValid}*/>Ajouter Étudiant</button>
             </div>
         </form>
         </div>
