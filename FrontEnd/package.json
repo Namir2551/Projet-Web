@@ -7,6 +7,7 @@
     "react-transition-group": "^4.4.5",
     "web-vitals": "^3.3.1"
   },
+  "homepage": "https://Namir2551.github.io/Projet-Web",
   "name": "frontend",
   "version": "1.0.0",
   "main": "index.js",
@@ -15,7 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build start"
   },
   "author": "",
