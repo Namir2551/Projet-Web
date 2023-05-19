@@ -1,6 +1,6 @@
 {
     "env": {
-        "DB_USER": "GMS",
+        "DB_USER": "GNS",
         "DB_PASSWORD": "0L21Niizmc929jJa",
         "DB_NAME":"mern"
     }
