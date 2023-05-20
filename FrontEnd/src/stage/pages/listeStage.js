@@ -12,7 +12,7 @@ const ListeStagePage = () => {
         const fetchStages = async () => {
           try {
             const responseData = await sendRequest(
-              process.env.REACT_APP_BACKEND_URL + `stages/listeStage`
+              process.env.REACT_APP_BACKEND_URL + `/stages/listeStage`
             );
             setLoadedStages(responseData.stage);
           } catch (err) {

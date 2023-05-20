@@ -56,7 +56,7 @@ function AjouterStage() {
     
         try {
           const reponseData = await sendRequest(
-            process.env.REACT_APP_BACKEND_URL + `stages/ajouterStage`,
+            process.env.REACT_APP_BACKEND_URL + `/stages/ajouterStage`,
             "POST",
             JSON.stringify({
                 nomContact: saisieNomContact,
