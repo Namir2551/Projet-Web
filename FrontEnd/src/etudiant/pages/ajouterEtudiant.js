@@ -30,7 +30,7 @@ const AjouterEtudiant = () => {
 
         try {
         const reponseData = await sendRequest(
-            process.env.REACT_APP_BACKEND_URL + `etudiants/ajouterEtudiant`,
+            process.env.REACT_APP_BACKEND_URL + `/etudiants/ajouterEtudiant`,
             "POST",
             JSON.stringify({
             numDA: saisieNumDA,
