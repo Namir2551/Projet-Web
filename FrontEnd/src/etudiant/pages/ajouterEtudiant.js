@@ -86,7 +86,7 @@ const AjouterEtudiant = () => {
                 </div>
             </div>
             <div className='nouveau-etudiant__actions'>
-                <button type='submit'>Ajouter Étudiant</button>
+                <button id="btnETU"type='submit'>Ajouter Étudiant</button>
             </div>
         </form>
         </div>

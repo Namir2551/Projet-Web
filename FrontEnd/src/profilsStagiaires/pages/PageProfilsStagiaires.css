@@ -1,0 +1,18 @@
+#sectionProfStage{
+    max-width: 1050px; /* Définit une largeur maximale pour le paragraphe */
+    margin-left: auto; /* Centre le paragraphe horizontalement en ajoutant une marge automatique à gauche et à droite */
+    margin-right: auto;
+    
+    background-color: rgb(248, 98, 185);
+    border-radius: 20px;
+    
+    font-family: "Times New Roman", Times, serif;
+    
+    
+  }
+
+p {
+    text-align: center;
+    font-size: 20px;
+    display: block;
+}
