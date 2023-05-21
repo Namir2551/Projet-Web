@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(255, 54, 201, 0.5);
+    background: rgb(252, 0, 210);
     box-shadow: 0 2px 6px rgba(25, 15, 164, 0.26);
     padding: 0 1rem;
     z-index: 5;
