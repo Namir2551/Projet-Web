@@ -26,8 +26,19 @@ const AjouterEtudiant = () => {
     };
 
     const etudiantSubmitHandler  = async event =>  {
-        event.preventDefault();
+        event.preventDefault(); 
 
+        // Vérifier si les champs sont vides
+        if (
+            saisieNumDA.trim() === '' ||
+            saisieNom.trim() === '' ||
+            saisieCourriel.trim() === '' ||
+            saisieProfilSortie.trim() === ''
+        ) {
+            console.log('Veuillez remplir tous les champs');
+            alert('Veuillez remplir tous les champs')
+            return; // Arrêter l'exécution de la fonction si des champs sont vides
+        }
         try {
         const reponseData = await sendRequest(
             process.env.REACT_APP_BACKEND_URL + `/etudiants/ajouterEtudiant`,
@@ -55,9 +66,11 @@ const AjouterEtudiant = () => {
                 <div className='nouveau-etudiant__control'>
                     <label>Numero d'admission</label>
                     <input
-                        id="numDA"
                         type='text'
+                        value={saisieNumDA}
                         onChange={changementNumDAHandler}
+                        pattern="^[0-9]+$"
+                        title="Le numéro d'admission doit contenir que des chiffres"
                     />
                 </div>
                 <div className='nouveau-etudiant__control'>
@@ -74,15 +87,17 @@ const AjouterEtudiant = () => {
                         id="courrielEtudiant"
                         type='text'
                         onChange={changementCourrielHandler}
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        title="Le courriel doit correspondre à la formule abc@abc.abc"
                     />
                 </div>
                 <div className='nouveau-etudiant__control'>
                     <label>Profil de sortie</label>
-                    <input
-                        id="profilSortieEtudiant"
-                        type='text'
+                    <select id="profilSortieEtudiant">
+                        <option value="reseau">Réseaux</option>
+                        <option value="programmation">Programmation</option>
                         onChange={changementProfilSortieHandler}
-                    />
+                    </select>
                 </div>
             </div>
             <div className='nouveau-etudiant__actions'>

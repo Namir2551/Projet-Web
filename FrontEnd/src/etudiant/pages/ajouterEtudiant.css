@@ -21,6 +21,17 @@
     width: 20rem;
     max-width: 100%;
   }
+
+  #profilSortieEtudiant {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
+
+  
   
   .nouveau-etudiant__actions {
     text-align: right;

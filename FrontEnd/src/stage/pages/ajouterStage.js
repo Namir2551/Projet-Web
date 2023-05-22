@@ -53,7 +53,21 @@ function AjouterStage() {
 
       const stageSubmitHandler  = async event =>  {
         event.preventDefault();
-    
+
+      if (saisieNomContact.trim() === '' ||
+        saisieCourrielContact.trim() === '' ||
+        saisieNumContact.trim() === '' ||
+        saisieNomEntreprise.trim() === '' ||
+        saisieAdresseEntreprise.trim() === '' ||
+        saisieTypeStage.trim() === '' ||
+        saisieNbPosteDispo.trim() === '' ||
+        saisieDescription.trim() === '' ||
+        saisieRenumeration.trim() === ''
+        ){
+          console.log('Veuillez remplir tous les champs');
+          alert('Veuillez remplir tous les champs')
+          return; // Arrêter l'exécution de la fonction si des champs sont vides
+        }
         try {
           const reponseData = await sendRequest(
             process.env.REACT_APP_BACKEND_URL + `/stages/ajouterStage`,
@@ -97,6 +111,8 @@ function AjouterStage() {
                         id="courrielContact"
                         type='text'
                         onChange={changementCourrielContactHandler}
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        title="Le courriel doit correspondre à la formule abc@abc.abc"
                     />
                 </div>
                 <div className='nouveau-stage__control'>
@@ -104,7 +120,10 @@ function AjouterStage() {
                     <input
                         id="numContact"
                         type='text'
+                        value={saisieNumContact}
                         onChange={changementNumContactHandler}
+                        pattern="^[0-9]+$"
+                        title="Le numéro d'admission doit contenir que des chiffres"
                     />
                 </div>
                 <div className='nouveau-stage__control'>
