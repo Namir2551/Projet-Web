@@ -3,6 +3,8 @@
   margin: 0;
   box-shadow: 0 5px 8px black;
   border-radius: 6px;
+  max-width: 1000px;
+  width: 1000px;
   padding: 1rem;
   overflow: hidden;
   background: pink;
