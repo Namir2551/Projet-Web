@@ -93,10 +93,9 @@ const AjouterEtudiant = () => {
                 </div>
                 <div className='nouveau-etudiant__control'>
                     <label>Profil de sortie</label>
-                    <select id="profilSortieEtudiant">
+                    <select id="profilSortieEtudiant"  onChange={changementProfilSortieHandler}>
                         <option value="reseau">Réseaux</option>
                         <option value="programmation">Programmation</option>
-                        onChange={changementProfilSortieHandler}
                     </select>
                 </div>
             </div>
