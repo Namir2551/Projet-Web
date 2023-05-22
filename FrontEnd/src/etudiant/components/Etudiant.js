@@ -12,8 +12,8 @@ const EtudiantItem = props => {
         <Card className="card-etudiant__content">
             <Link to={"/ListeStage/"} className="link-unstyled">
             <div className="card-prof__info">
-                <h2>{props.numDA}</h2>
-                <h3>{props.nomEtudiant}</h3>
+                <p id = "etu">{props.numDA}</p>
+                <p id = "etu">{props.nomEtudiant}</p>
                 <p>{props.courrielEtudiant}</p>
                 <p>{props.profilSortieEtudiant}</p>
             </div>

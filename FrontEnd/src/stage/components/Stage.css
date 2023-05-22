@@ -44,3 +44,8 @@
   .card-cours h3 {
     margin: 0;
   }
+
+#stage{
+  font-weight: bold;
+  font-size: 30px;
+}

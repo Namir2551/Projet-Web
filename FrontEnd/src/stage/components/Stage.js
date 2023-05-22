@@ -10,8 +10,8 @@ const Cours = props => {
       <li className="card-etudiant">
         <Card className="card-etudiant__content">
             <div className="card-prof__info">
-                <h2>{props.nomContact}</h2>
-                <h3>{props.courrielContact}</h3>
+                <p id="stage">{props.nomContact}</p>
+                <p id="stage">{props.courrielContact}</p>
                 <p>{props.numContact}</p>
                 <p>{props.nomEntreprise}</p>
                 <p>{props.adresseEntreprise}</p>
